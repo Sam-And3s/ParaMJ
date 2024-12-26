@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat+Alternates");
+
+html {
+  position: relative; /* Asegura que las estrellas se posicionen correctamente sobre la página */
+  height: 200vh;
+  background: radial-gradient(circle at bottom, #F7B32B 0%, #1B4965 50%);
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.star {
+  position: absolute;
+  width: 5px; /* Tamaño de las estrellas */
+  height: 5px;
+  background-color: white;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: twinkle 1.5s infinite alternate;
+  pointer-events: none; /* Para que no interfieran con otros elementos */
+  z-index: -1;
+}
+
+@keyframes twinkle {
+  0% {
+      opacity: 0.7;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+body {
+  height: 200vh;
+  overflow: hidden;
+  border-bottom: 10vh #306B34 solid;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 101%;
+}
+
+#ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10vh; /* Altura del suelo */
+  background-color: #306B34;
+  z-index: 1;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 25px;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  transform: translateY(200vh);
+  animation: move 0.5s 1.5s forwards;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.gypsophila {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: sway 3s infinite ease-in-out;
+  transform-origin: center bottom;
+}
+
+.gypsophila__stem {
+  width: 5px; /* Hacer las ramas más gruesas */
+  height: 250px; /* Aumentar la altura de las ramas */
+  background-color: rgb(13, 194, 13);
+  position: absolute;
+  animation: swayStem 4s infinite ease-in-out;
+}
+
+.gypsophila__flower {
+  position: absolute;
+  width: 20px; /* Tamaño total de la flor */
+  height: 20px;
+  transform-origin: center;
+}
+
+.gypsophila__flower-petal {
+  width: 12px; /* Tamaño de cada pétalo */
+  height: 18px; /* Pétalos más largos */
+  background-color: #fff; /* Color blanco para los pétalos */
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidad */
+}
+
+.gypsophila__flower-center {
+  width: 8px;
+  height: 8px;
+  background-color: #f4a300; /* Color amarillo cálido para el centro */
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Animaciones */
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.2);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes sway {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
